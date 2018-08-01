@@ -2,8 +2,11 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import * as _ from 'lodash';
 import { Lokkenism, LokkenismsProvider } from '../../providers/lokkenisms/lokkenisms';
+import { AddLokkenismPage } from '../add-lokkenism/add-lokkenism';
 
-@IonicPage()
+@IonicPage({
+  segment: 'lokkenisms'
+})
 @Component({
   selector: 'page-lokkenisms',
   templateUrl: 'lokkenisms.html',
@@ -60,9 +63,9 @@ export class LokkenismsPage {
     return text && text.toLowerCase().includes(filterText);
   }
 
-  async openModal($event) {
-    // const modal = this.modal.create(AddLokkenismPage);
-    // modal.present();
+  openModal($event) {
+    const modal = this.modal.create(AddLokkenismPage);
+    modal.present();
   }
 
 }
