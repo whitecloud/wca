@@ -8,20 +8,20 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-item>
-      <ion-label>Quote*</ion-label>
-      <ion-input required type="text" placeholder="What'd they say?" [(ngModel)]="lokkenism.quote"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Author</ion-label>
-      <ion-input type="text" placeholder="Who? (optional)" [(ngModel)]="lokkenism.author"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Note</ion-label>
-      <ion-input required type="text" placeholder="Context? (optional)" [(ngModel)]="lokkenism.note"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label>Quote*</ion-label>
+    <ion-input required type="text" placeholder="What'd they say?" [(ngModel)]="lokkenism.quote"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Author</ion-label>
+    <ion-input type="text" placeholder="Who? (optional)" [(ngModel)]="lokkenism.author"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Note</ion-label>
+    <ion-input required type="text" placeholder="Context? (optional)" [(ngModel)]="lokkenism.note"></ion-input>
+  </ion-item>
 
-    <div class="loading-container">
-      <button ion-button (click)="addLokkenism()">Add</button>
-    </div>
+  <div class="loading-container">
+    <button ion-button (click)="addLokkenism()">Add</button>
+  </div>
 </ion-content>
