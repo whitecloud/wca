@@ -1,0 +1,78 @@
+page-lokkenisms {
+    @import url('https://fonts.googleapis.com/css?family=Montez');
+    @import url(https://fonts.googleapis.com/css?family=Francois+One);
+    
+    .year {
+        h1 {
+            font-size: 30px;
+            padding-left: 8px;
+        }
+    
+        .quote {
+            font-size: 20px;
+        }
+        .author {
+            margin-top: 5px;
+            text-align: right;
+            &:before {
+                content: '-';
+            }
+        }
+        .note {
+            color: #7f7f7f;
+            margin-top: 5px;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+            padding-top: 5px;
+        }
+    }
+    
+    blockquote{
+      display:block;
+      background: #fff;
+      padding: 15px 20px 15px 45px;
+      margin: 0 0 20px;
+      position: relative;
+      
+      /*Font*/
+      font-family: Georgia, serif;
+      font-size: 14px;
+      line-height: 1.2;
+      color: #666;
+    
+      /*Box Shadow - (Optional)*/
+      -moz-box-shadow: 2px 2px 15px #ccc;
+      -webkit-box-shadow: 2px 2px 15px #ccc;
+      box-shadow: 2px 2px 15px #ccc;
+    
+      /*Borders - (Optional)*/
+      border-left-style: solid;
+      border-left-width: 15px;
+    }
+    
+    blockquote::before{
+      content: "\201C"; /*Unicode for Left Double Quote*/
+      
+      /*Font*/
+      font-family: Georgia, serif;
+      font-size: 40px;
+      font-weight: bold;
+      color: #999;
+      
+      /*Positioning*/
+      position: absolute;
+      left: 10px;
+      top:5px;
+    }
+    
+    blockquote::after{
+      /*Reset to make sure*/
+      content: "";
+    }
+    
+    /*Blue Jeans Color Palette*/
+    blockquote.bluejeans{
+      border-left-color: #5e9de6;
+      border-right-color: #4b8ad6;
+    }
+}

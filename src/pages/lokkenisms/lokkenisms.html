@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Lokkenisms</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="filterText"></ion-searchbar>
+  </ion-toolbar>
+
+  <div class="spinner-container">
+    <ion-spinner *ngIf="loading"></ion-spinner>
+  </div>
+
+  <div class="year" *ngFor="let year of filteredItems(years)">
+
+    <h1>{{year.year}}</h1>
+
+    <blockquote class="bluejeans" *ngFor="let lokkenism of year.lokkenisms">
+      <div class="quote">{{lokkenism.quote}}</div>
+      <div class="author" *ngIf="lokkenism.author">{{lokkenism.author}}</div>
+      <div class="note" *ngIf="lokkenism.note">{{lokkenism.note}}</div>
+    </blockquote>
+  </div>
+</ion-content>
