@@ -21,6 +21,7 @@ This project is set up with Firebase hosting and cloud functions, and the deploy
 ## Future Plans
 
 - Auth with Google or WCA email/password perhaps (we don't manage passwords, Firebase auth does for us)
+- Deploy to App Store and Google Play so employees can easily install the app
 - Add integrations or simply links to other apps such as Foosey
 - RateMyBeer™️, a safe space to tell Randall how you really feel about his FunSchway beer choices
 - Karaoke challenges perhaps? (talk to Justin and Adam)
