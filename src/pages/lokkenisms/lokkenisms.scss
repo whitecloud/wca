@@ -3,9 +3,21 @@ page-lokkenisms {
     @import url(https://fonts.googleapis.com/css?family=Francois+One);
     
     .year {
-        h1 {
-            font-size: 30px;
-            padding-left: 8px;
+        .lokkenism-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0 8px;
+
+            h1 {
+                font-size: 30px;
+            }
+
+            span {
+                font-size: 20px;
+                color: #7f7f7f;
+                margin-bottom: 10px;
+            }
         }
     
         .quote {

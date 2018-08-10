@@ -16,6 +16,7 @@ export class LokkenismsPage {
   filterText: String = '';
   lokkenisms: Lokkenism[];
   years: any = [];
+  filteredYears: any = [];
   loading: boolean = true;
 
   constructor(
@@ -38,17 +39,19 @@ export class LokkenismsPage {
         .reverse()
         .value();
 
+      this.filterYears();
+
       this.loading = false;
 
     });
   }
 
-  filteredItems(theYears) {
+  filterYears() {
     // clone the data so we don't modify it accidentally
-    let cloned = _.cloneDeep(theYears);
+    let cloned = _.cloneDeep(this.years);
     let lowercaseFilterText = this.filterText.toLowerCase();
 
-    return _.filter(cloned, year => {
+    this.filteredYears = _.filter(cloned, year => {
       year.lokkenisms = _.filter(year.lokkenisms, lokkenism => {
         return this.matches(lokkenism.quote, lowercaseFilterText) ||
           this.matches(lokkenism.author, lowercaseFilterText) || 
