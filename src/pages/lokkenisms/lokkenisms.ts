@@ -55,7 +55,8 @@ export class LokkenismsPage {
       year.lokkenisms = _.filter(year.lokkenisms, lokkenism => {
         return this.matches(lokkenism.quote, lowercaseFilterText) ||
           this.matches(lokkenism.author, lowercaseFilterText) || 
-          this.matches(lokkenism.note, lowercaseFilterText);
+          this.matches(lokkenism.note, lowercaseFilterText) ||
+          this.matches(year.year.toString(), lowercaseFilterText);
       });
       
       return year.lokkenisms.length > 0;
