@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
+import { ViewController, NavParams, AlertController } from 'ionic-angular';
 import { LokkenismsProvider, Lokkenism } from '../../providers/lokkenisms/lokkenisms';
 import * as moment from 'moment';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'page-add-lokkenism',
@@ -9,13 +10,17 @@ import * as moment from 'moment';
 })
 export class AddLokkenismPage {
 
+  existingLokkenism: any;
   lokkenism: Lokkenism;
 
   constructor(
+    public navParams: NavParams,
     public view: ViewController,
-    private db: LokkenismsProvider
+    private db: LokkenismsProvider,
+    private alert: AlertController
   ) { 
-    this.lokkenism = this.newLokkenism();
+    this.existingLokkenism = navParams.get('lokkenism');
+    this.lokkenism = _.cloneDeep(this.existingLokkenism) || this.newLokkenism();
   }
 
   newLokkenism() {
@@ -24,6 +29,10 @@ export class AddLokkenismPage {
       note: '',
       author: ''
     };
+  }
+
+  noChange() {
+    return JSON.stringify(this.lokkenism) === JSON.stringify(this.existingLokkenism);
   }
 
   addLokkenism() {
@@ -35,6 +44,33 @@ export class AddLokkenismPage {
     // add to the collection and close the modal
     this.db.addLokkenism(this.lokkenism);
     this.view.dismiss();
+  }
+
+  editLokkenism() {
+    this.db.editLokkenism(this.lokkenism);
+    this.view.dismiss();
+  }
+
+  deleteLokkenism() {
+    let alert = this.alert.create({
+      title: 'Delete Lokkenism',
+      message: 'Deleted Lokkenisms can be recovered manually from the database.',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Delete',
+          cssClass: 'danger',
+          handler: () => {
+            this.db.deleteLokkenism(this.lokkenism);
+            this.view.dismiss();
+          }
+        }
+      ]
+    });
+    alert.present(); 
   }
 
 }

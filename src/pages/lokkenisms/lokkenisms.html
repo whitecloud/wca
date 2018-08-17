@@ -30,7 +30,7 @@
       <span>{{ year.lokkenisms.length }} {{ year.lokkenisms.length === 1 ? 'Lokkenism' : 'Lokkenisms' }}</span>
     </div>
 
-    <blockquote class="bluejeans" *ngFor="let lokkenism of year.lokkenisms">
+    <blockquote class="bluejeans" *ngFor="let lokkenism of year.lokkenisms" (click)="editLokkenism(lokkenism)">
       <div class="quote">{{lokkenism.quote}}</div>
       <div class="author" *ngIf="lokkenism.author">{{lokkenism.author}}</div>
       <div class="note" *ngIf="lokkenism.note">{{lokkenism.note}}</div>

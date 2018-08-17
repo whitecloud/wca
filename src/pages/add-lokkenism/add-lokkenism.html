@@ -22,6 +22,8 @@
   </ion-item>
 
   <div class="loading-container">
-    <button ion-button full clear (click)="addLokkenism()" [disabled]="!lokkenism.quote">Add</button>
+    <button ion-button full clear (click)="addLokkenism()" [disabled]="!lokkenism.quote" *ngIf="!existingLokkenism">Add</button>
+    <button ion-button full clear (click)="editLokkenism()" [disabled]="!lokkenism.quote || noChange()" *ngIf="existingLokkenism">Update</button>
+    <button ion-button full clear color="danger" margin-top (click)="deleteLokkenism()" *ngIf="existingLokkenism">Delete</button>
   </div>
 </ion-content>

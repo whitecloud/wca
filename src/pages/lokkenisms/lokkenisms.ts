@@ -32,7 +32,10 @@ export class LokkenismsPage {
         .map((lokkenisms, year) => {
           return { 
             year: year === 'undefined' ? 'Unknown Year' : year, 
-            lokkenisms: _.orderBy(lokkenisms, ({ timestamp }) => timestamp || 0, ['desc'])
+            lokkenisms: _(lokkenisms)
+              .orderBy(({ timestamp }) => timestamp || 0, ['desc'])
+              .filter(({ deleted }) => deleted !== true)
+              .value()
           };
         })
         .sortBy('year')
@@ -67,8 +70,13 @@ export class LokkenismsPage {
     return text && text.toLowerCase().includes(filterText);
   }
 
-  openModal($event) {
+  openModal() {
     const modal = this.modal.create(AddLokkenismPage);
+    modal.present();
+  }
+
+  editLokkenism(lokkenism) {
+    const modal = this.modal.create(AddLokkenismPage, { lokkenism: lokkenism });
     modal.present();
   }
 
