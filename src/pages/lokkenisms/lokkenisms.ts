@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, ModalController } from 'ionic-angular';
 import * as _ from 'lodash';
 import { Lokkenism, LokkenismsProvider } from '../../providers/lokkenisms/lokkenisms';
 import { AddLokkenismPage } from '../add-lokkenism/add-lokkenism';
