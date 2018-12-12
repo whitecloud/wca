@@ -6,6 +6,7 @@ import * as request from 'request';
 admin.initializeApp(functions.config().firebase);
 const db = admin.firestore();
 
+// firebase functions:config:set slack.url="your://url.here"
 const SLACK_URL = functions.config().slack.url;
 
 exports.notifyNewLokkenism = functions.firestore
