@@ -34,3 +34,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .firebase/hosting.0.cache
+.firebase/hosting.d3d3.cache
+functions/lib/index.js
+functions/lib/index.js.map
