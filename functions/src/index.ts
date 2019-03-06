@@ -1,10 +1,5 @@
 import * as functions from 'firebase-functions';
-import * as admin from 'firebase-admin';
 import * as request from 'request';
-
-// get the admin database
-admin.initializeApp(functions.config().firebase);
-const db = admin.firestore();
 
 // firebase functions:config:set slack.url="your://url.here"
 const SLACK_URL = functions.config().slack.url;
