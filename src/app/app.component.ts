@@ -18,7 +18,7 @@ export class MyApp {
 
     this.pages = [
       { title: 'Home', component: 'HomePage', img: 'assets/icon/favicon/apple-touch-icon.png' },
-      { title: 'Lokkenisms', component: 'LokkenismsPage', img: 'assets/imgs/lokken.png' },
+      { title: 'Renakisms', component: 'LokkenismsPage', img: 'assets/imgs/renak.png' },
       { title: 'Foosball', link: 'https://foosey.app/#/leagues/S4EJ6qRkTKrXEKk6BSvE', img: 'assets/imgs/foosey.png' },
       { title: 'Cornhole', link: 'https://foosey.app/#/leagues/MZBESzj36BLMetCNw19P', img: 'assets/imgs/bags.jpg' }
     ];

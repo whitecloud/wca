@@ -1,5 +1,5 @@
 # WhiteCloud App
-The in-house application for the WhiteCloud office. Someday, this app might be really snazzy. Right now, just add Lokkenisms™️ as you hear them from the Lokkenisms tab.
+The in-house application for the WhiteCloud office. Someday, this app might be really snazzy. Right now, just add Renakisms™️ as you hear them from the Renakisms tab.
   
 ## Contribute
 

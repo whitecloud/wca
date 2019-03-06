@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Lokkenisms</ion-title>
+    <ion-title>Renakisms</ion-title>
     <ion-buttons end>
       <button ion-button (click)="openModal($event)">Add</button>
     </ion-buttons>
@@ -27,7 +27,7 @@
     <!-- the year and number of lokkenisms -->
     <div class="lokkenism-header">
       <h1>{{year.year}}</h1>
-      <span>{{ year.lokkenisms.length }} {{ year.lokkenisms.length === 1 ? 'Lokkenism' : 'Lokkenisms' }}</span>
+      <span>{{ year.lokkenisms.length }} {{ year.lokkenisms.length === 1 ? 'Renakism' : 'Renakisms' }}</span>
     </div>
 
     <blockquote class="bluejeans" *ngFor="let lokkenism of year.lokkenisms" (click)="editLokkenism(lokkenism)">
